@@ -1,0 +1,2 @@
+# PEPWeightFromImage
+画像からUV座標に基づいてウェイトを設定するPMXEditorプラグイン
