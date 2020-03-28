@@ -195,7 +195,7 @@ namespace WeightFromImage
                 MessageBox.Show("ウェイト転写対象の材質を選択してください。");
                 return;
             }
-            if(comboBoxBone.SelectedIndex<0)
+            if (comboBoxBone.SelectedIndex < 0)
             {
                 MessageBox.Show("ウェイト対象のボーンを選択してください。");
                 return;
@@ -209,7 +209,7 @@ namespace WeightFromImage
             for (int i = 0; i < mesh.Vertices.Count; i++)
             {
                 IPXVertex v = mesh.Vertices[i];
-                (IPXBone bone, float weight) bw = (targetBone, GetPointColor(v).R);
+                (IPXBone bone, float weight) bw = (targetBone, GetPointColor(v).R / 255f);
                 var vertexWB = Utility.GetWeights(v);
 
                 //頂点のウェイトを編集
