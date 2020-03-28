@@ -30,6 +30,7 @@ namespace WeightFromImage
             listBoxMaterial.Items.Clear();
             listBoxMaterial.Items.Add("");
             listBoxMaterial.Items.AddRange(pmx.Material.Select(m => m.Name).ToArray());
+            comboBoxBone.Items.Clear();
             comboBoxBone.Items.AddRange(pmx.Bone.Select(b => b.Name).ToArray());
             materialBmp = new Bitmap[pmx.Material.Count];
         }
