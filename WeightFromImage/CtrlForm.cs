@@ -92,8 +92,8 @@ namespace WeightFromImage
 
         Color GetPointColor(IPXVertex vertex)
         {
-            int x = U(vertex.UV.U).Round();
-            int y = V(vertex.UV.V).Round();
+            int x = U(vertex.UV.U).Round() % bitmap.Width;
+            int y = V(vertex.UV.V).Round() % bitmap.Height;
             Color pixel = bitmap.GetPixel(x, y);
 
             int selectedColor = 0;
