@@ -36,6 +36,29 @@ namespace WeightFromImage
         }
 
         /// <summary>
+        /// 指定した区間の範囲内であるかを判断します。
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="i"></param>
+        /// <param name="lower">下限</param>
+        /// <param name="isLowerIntervalClosed">この区間は左閉であるか</param>
+        /// <param name="upper">上限</param>
+        /// <param name="isUpperIntervalClosed">この区間は右閉であるか</param>
+        /// <returns></returns>
+        public static bool IsInRangeOf<T>(this T i, T lower, bool isLowerIntervalClosed, T upper, bool isUpperIntervalClosed) where T : IComparable
+        {
+            if (upper.CompareTo(lower) < 0)
+                throw new ArgumentOutOfRangeException("IsInRangeOf<T>:下限値が上限値よりも大きいです。");
+            
+            var l = i.CompareTo(lower);
+            bool isInRangeLower = isLowerIntervalClosed ? l >= 0 : l > 0;
+            var u = upper.CompareTo(i);
+            bool isInRangeUpper = isUpperIntervalClosed ? u >= 0 : u > 0;
+
+            return isInRangeLower && isInRangeUpper;
+        }
+
+        /// <summary>
         /// 末尾に改行文字を加えてstringに変換する
         /// </summary>
         public static string ToStringL(this object value)

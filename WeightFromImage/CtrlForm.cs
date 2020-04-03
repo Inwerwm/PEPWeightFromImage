@@ -86,14 +86,17 @@ namespace WeightFromImage
             return bmp;
         }
 
-        private float V(float value) => value * bitmap.Height - (checkBoxDec.Checked ? 1 : 0);
+        private float V(float value) => value * (bitmap.Height - (checkBoxDec.Checked ? 1 : 0));
 
-        private float U(float value) => value * bitmap.Width - (checkBoxDec.Checked ? 1 : 0);
+        private float U(float value) => value * (bitmap.Width - (checkBoxDec.Checked ? 1 : 0));
 
         Color GetPointColor(IPXVertex vertex)
         {
-            int x = U(vertex.UV.U).Round() % bitmap.Width;
-            int y = V(vertex.UV.V).Round() % bitmap.Height;
+            int x = U(vertex.UV.U).Round();
+            int y = V(vertex.UV.V).Round();
+            if (!x.IsInRangeOf(0, true, bitmap.Width, false) || !y.IsInRangeOf(0, true, bitmap.Height, false))
+                return Color.Black;
+
             Color pixel = bitmap.GetPixel(x, y);
 
             int selectedColor = 0;

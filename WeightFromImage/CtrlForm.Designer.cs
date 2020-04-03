@@ -49,8 +49,8 @@
             this.buttonReload = new System.Windows.Forms.Button();
             this.checkBoxWithLine = new System.Windows.Forms.CheckBox();
             this.numericWidth = new System.Windows.Forms.NumericUpDown();
-            this.labelSettings = new System.Windows.Forms.Label();
             this.labelWidth = new System.Windows.Forms.Label();
+            this.labelSettings = new System.Windows.Forms.Label();
             this.buttonSettings = new System.Windows.Forms.Button();
             this.comboBoxBone = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).BeginInit();
@@ -234,6 +234,8 @@
             // checkBoxDec
             // 
             this.checkBoxDec.AutoSize = true;
+            this.checkBoxDec.Checked = true;
+            this.checkBoxDec.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxDec.Location = new System.Drawing.Point(7, 598);
             this.checkBoxDec.Name = "checkBoxDec";
             this.checkBoxDec.Size = new System.Drawing.Size(67, 24);
@@ -282,6 +284,15 @@
             0,
             0});
             // 
+            // labelWidth
+            // 
+            this.labelWidth.AutoSize = true;
+            this.labelWidth.Location = new System.Drawing.Point(3, 0);
+            this.labelWidth.Name = "labelWidth";
+            this.labelWidth.Size = new System.Drawing.Size(72, 20);
+            this.labelWidth.TabIndex = 0;
+            this.labelWidth.Text = "点の大きさ";
+            // 
             // labelSettings
             // 
             this.labelSettings.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -293,15 +304,6 @@
             this.labelSettings.TabIndex = 0;
             this.labelSettings.Text = "設定";
             this.labelSettings.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // labelWidth
-            // 
-            this.labelWidth.AutoSize = true;
-            this.labelWidth.Location = new System.Drawing.Point(3, 0);
-            this.labelWidth.Name = "labelWidth";
-            this.labelWidth.Size = new System.Drawing.Size(72, 20);
-            this.labelWidth.TabIndex = 0;
-            this.labelWidth.Text = "点の大きさ";
             // 
             // buttonSettings
             // 
@@ -321,7 +323,7 @@
             // 
             this.comboBoxBone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxBone.FormattingEnabled = true;
-            this.comboBoxBone.Location = new System.Drawing.Point(800, 77);
+            this.comboBoxBone.Location = new System.Drawing.Point(800, 73);
             this.comboBoxBone.Name = "comboBoxBone";
             this.comboBoxBone.Size = new System.Drawing.Size(229, 28);
             this.comboBoxBone.TabIndex = 5;
